@@ -1,0 +1,16 @@
+<% include common/head.ejs %>
+
+<body>
+    <div id="background-window">
+        <div id="navbar">
+            <div id='btnReg' class="btn">Register</div>
+            <div id='btnLog' class="btn">Log in</div>
+            <a id='btnGuest' class="btn links" href="/guest">Guest</a>
+        </div>
+        <div id="input-window">
+            <%include pagesHTML/register.ejs%>
+            <%include pagesHTML/login.ejs%>
+            <div id="logo-wrap"><img src=/img/chatLogo.png ></div>
+        </div>
+    </div>
+    <% include common/scripts-footer.ejs %>

@@ -1,0 +1,90 @@
+/* Nuo SM */
+
+@media (max-width:576px) {}
+
+
+
+/* Nuo MD*/
+
+@media (max-width:768px) {
+    #chat-room {
+        overflow-y: auto;
+        height: 110vh;
+    }
+    #chat-top {
+        flex-direction: column;
+        align-items: center;
+        height: 80%;
+    }
+    #online-window {
+        width: 100%;
+        display: inline-flex;
+        height: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    #online-window-name {
+        width: 15%;
+        font-size: 0.8rem;
+        padding: 0rem 0rem;
+        margin-bottom: 0rem;
+        border-radius: 1rem;
+        border-right: solid 1px var(--body-lighter);
+        border-bottom: none;
+    }
+    #online-window-users {
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .online-user {
+        margin-left: 0.5rem;
+    }
+    #message-window {
+        width: 100%;
+        height: 100%;
+        font-size: 0.9rem;
+    }
+    #chat-bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 20%;
+    }
+    #btn-tray {
+        width: 100%;
+    }
+    #type-send-tray {
+        width: 100%;
+    }
+    #btn-send {
+        font-size: 0.6rem;
+        width: 15%;
+    }
+    #message-input-field {
+        width: 85%;
+    }
+}
+
+/* Nuo LG */
+
+@media (max-width:992px) {
+    #btn-send {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:1200px) {}
+
+/*pavertus mobileka*/
+
+@media (max-height:600px) {
+        #chat-top {
+            height: 65%;
+        }
+        #chat-bottom {
+            height: 35%;
+        }
+}

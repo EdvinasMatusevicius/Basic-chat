@@ -1,0 +1,48 @@
+/* Nuo SM */
+@media (min-width:576px){
+    
+}
+/* Nuo MD*/
+@media (min-width:768px){
+    .btn{
+        font-size: 2rem;
+    }
+}
+/* Nuo LG */
+@media (min-width:992px){
+    
+}
+
+@media (min-width:1200px){
+    .btn{
+        font-size: 2.3rem;
+    }
+    .btn-submit{
+        font-size: 1.5rem;;
+    }
+    .form-fields{
+        font-size: 1.4rem;;
+    }
+}
+@media (min-width:2000px){
+    .btn{
+        font-size: 2.7rem;
+    }
+    .btn-submit{
+        font-size: 2rem;;
+    }
+    .form-fields{
+        font-size: 1.8rem;;
+    }
+}
+@media (min-width:2500px){
+    .btn{
+        font-size: 4.5rem;
+    }
+    .btn-submit{
+        font-size: 2.5rem;;
+    }
+    .form-fields{
+        font-size: 2.2rem;;
+    }
+}

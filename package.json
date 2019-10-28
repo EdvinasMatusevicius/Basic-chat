@@ -1,0 +1,21 @@
+{
+  "name": "online_chat",
+  "version": "1.0.0",
+  "description": "Chatroom app",
+  "main": "app.js",
+  "scripts": {
+    "dev": " nodemon app",
+    "test": "mocha --timeout 10000"
+  },
+  "author": "ed",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "mocha": "^6.2.0",
+    "mongoose": "^5.7.1",
+    "socket.io": "^2.2.0"
+  }
+}
