@@ -21,7 +21,7 @@ const session = (expressSession({
     secret: process.env.SECRET,
     cookie: {
         sameSite: true,
-        secure: false, //false jei per http (ir dev mode), true veikia tik per https websites 
+        secure: true, //false jei per http (ir dev mode), true veikia tik per https websites 
     }
 }));
 app.use(session);
