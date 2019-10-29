@@ -12,9 +12,7 @@ dotenv.config({
 
 connectDb();
 
-const server = app.listen(process.env.PORT,function(){
-    console.log(`listening port number ${process.env.PORT}`);
-});
+const server = app.listen(process.env.PORT || 3000);
 
 const session = (expressSession({
     name: 'sessionID',
