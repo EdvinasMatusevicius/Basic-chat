@@ -11,7 +11,7 @@ const redirectLogin = (req, res, next) => {
     }
 }
 const redirectChat = (req, res, next) => {
-    if (req.session.user) {
+    if (process.env.STAGE === 'prod') {
         res.redirect('/chat');
     } else {
         next();
