@@ -5,7 +5,8 @@ const storage = require('../modules/storage.js');
 
 const redirectLogin = (req, res, next) => {
     if (!req.session.user) {
-        res.redirect('/');
+        // res.redirect('/');
+        next();
     } else {
         next();
     }
