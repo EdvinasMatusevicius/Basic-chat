@@ -5,14 +5,13 @@ const storage = require('../modules/storage.js');
 
 const redirectLogin = (req, res, next) => {
     if (!req.session.user) {
-        // res.redirect('/');
-        next();
+        res.redirect('/');
     } else {
         next();
     }
 }
 const redirectChat = (req, res, next) => {
-    if (process.env.STAGE === 'prod') {
+    if (req.session.user) {
         res.redirect('/chat');
     } else {
         next();

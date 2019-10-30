@@ -1,9 +1,9 @@
 
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const connectDb = function (mongoose) {
-    dotenv.config({
-        path: './.env'
-    });
+    // dotenv.config({
+    //     path: './.env'
+    // });
     // mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true, useUnifiedTopology: true });
 
     if(process.env.STAGE === 'dev'){

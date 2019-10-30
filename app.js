@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const expressSession = require('express-session');
 const connectDb = require('./modules/connection.js');
 const routes = require('./routes/routes');
@@ -8,10 +8,11 @@ const socket = require('./socket/socketIO');
 const MongoStore = require('connect-mongo')(expressSession);
 const mongoose = require('mongoose');
 
-dotenv.config({
-    path: './.env'
-});
+// dotenv.config({
+//     path: './.env'
+// });
 
+console.log('pries prisijungima')
 connectDb(mongoose);
 
 const server = app.listen(process.env.PORT || 3000);
