@@ -1,10 +1,11 @@
-const mongoose = require('mongoose');
+
 const dotenv = require('dotenv');
-const connectDb = function () {
+const connectDb = function (mongoose) {
     dotenv.config({
         path: './.env'
     });
     // mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true, useUnifiedTopology: true });
+
     if(process.env.STAGE === 'dev'){
     mongoose.connect(`mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@basicchat-lha68.mongodb.net/users?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
     } else if (process.env.STAGE === 'prod'){
