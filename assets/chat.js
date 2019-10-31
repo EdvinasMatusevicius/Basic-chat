@@ -1,5 +1,5 @@
 //make conection to socket io
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect('/');
 // var socket = io({transports: ['websocket'], upgrade: false});  //jei useris perkraudinetu puslapi su f5 ir del to susidarytu problema
 // https://stackoverflow.com/questions/41924713/node-js-socket-io-page-refresh-multiple-connections
 

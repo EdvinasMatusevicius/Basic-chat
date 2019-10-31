@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const dotenv = require('dotenv');
 const expressSession = require('express-session');
 const connectDb = require('./modules/connection.js');
 const routes = require('./routes/routes');
@@ -8,6 +7,8 @@ const socket = require('./socket/socketIO');
 const MongoStore = require('connect-mongo')(expressSession);
 const mongoose = require('mongoose');
 
+
+// const dotenv = require('dotenv');
 // dotenv.config({
 //     path: './.env'
 // });
