@@ -87,6 +87,9 @@
         #chat-bottom {
             height: 40%;
         }
+        #message-input-field{
+            height: 3.5rem;
+        }
 }
 @media (max-height:300px) {
     #chat-top {

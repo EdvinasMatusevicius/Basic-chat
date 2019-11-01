@@ -214,6 +214,7 @@ body {
 #type-send-tray {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 80%;
 }
 
@@ -238,7 +239,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 6%;
-    height: 4.4rem;
+    height: 100%;
     border-radius: 2.2rem;
     font-size: 1.2rem;
     font-weight: 900;
