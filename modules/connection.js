@@ -1,9 +1,11 @@
 
-// const dotenv = require('dotenv');
 const connectDb = function (mongoose) {
-    // dotenv.config({
-    //     path: './.env'
-    // });
+    if (process.env.STAGE !== 'prod') {
+        const dotenv = require('dotenv');
+        dotenv.config({
+            path: './.env'
+        });
+    };
     // mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true, useUnifiedTopology: true });
 
     if(process.env.STAGE === 'dev'){

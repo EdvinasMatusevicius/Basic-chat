@@ -7,11 +7,12 @@ const socket = require('./socket/socketIO');
 const MongoStore = require('connect-mongo')(expressSession);
 const mongoose = require('mongoose');
 
-
-// const dotenv = require('dotenv');
-// dotenv.config({
-//     path: './.env'
-// });
+if (process.env.STAGE !== 'prod') {
+    const dotenv = require('dotenv');
+    dotenv.config({
+        path: './.env'
+    });
+};
 
 console.log('pries prisijungima')
 connectDb(mongoose);
@@ -30,11 +31,11 @@ const session = (expressSession({
     }
 }));
 app.use(session);
-app.set('view engine','ejs');
-app.use('/public',express.static(__dirname+'/assets'));
-app.use('/img',express.static(__dirname+'/images'));
+app.set('view engine', 'ejs');
+app.use('/public', express.static(__dirname + '/assets'));
+app.use('/img', express.static(__dirname + '/images'));
 console.log('this should be after server');
-app.use('/',routes);
+app.use('/', routes);
 
 // socket setup
-socket.socketInit(server,session);
+socket.socketInit(server, session);

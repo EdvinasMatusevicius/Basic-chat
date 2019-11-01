@@ -9,12 +9,12 @@
 @media (max-width:768px) {
     #chat-room {
         overflow-y: auto;
-        height: 110vh;
+        height: 100vh;
     }
     #chat-top {
         flex-direction: column;
         align-items: center;
-        height: 80%;
+        height: 70%;
     }
     #online-window {
         width: 100%;
@@ -51,7 +51,7 @@
         flex-direction: column-reverse;
         justify-content: space-evenly;
         width: 100%;
-        height: 20%;
+        height: 30%;
     }
     #btn-tray {
         width: 100%;
@@ -82,9 +82,17 @@
 
 @media (max-height:600px) {
         #chat-top {
-            height: 65%;
+            height: 60%;
         }
         #chat-bottom {
-            height: 35%;
+            height: 40%;
         }
+}
+@media (max-height:300px) {
+    #chat-top {
+        display:none;
+    }
+    #chat-bottom {
+        height: 100%;
+    }
 }
