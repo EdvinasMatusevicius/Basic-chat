@@ -6,6 +6,7 @@ const routes = require('./routes/routes');
 const socket = require('./socket/socketIO');
 const MongoStore = require('connect-mongo')(expressSession);
 const mongoose = require('mongoose');
+const hour = 3600000;
 
 if (process.env.STAGE !== 'prod') {
     const dotenv = require('dotenv');
@@ -13,7 +14,6 @@ if (process.env.STAGE !== 'prod') {
         path: './.env'
     });
 };
-
 console.log('pries prisijungima')
 connectDb(mongoose);
 
@@ -26,6 +26,7 @@ const session = (expressSession({
     secret: process.env.SECRET,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     cookie: {
+        maxAge: hour*6,
         sameSite: true,
         secure: false, //false jei per http (ir dev mode), true veikia tik per https websites 
     }
