@@ -1,27 +1,36 @@
 const socket = require('socket.io');
 const onlineUserAvoidDuplicate = function (sessionName, socketId,io, arr, action) {
     if (arr.length > 0) {
+        //iesko indexu online useriu array prisijungimo ir atsijungimo atvejais
         const searchUser = arr.findIndex((user) => {
             if (action === 'connection') {
                 return user.nick === sessionName;
             } else if (action === 'disconnect') {
-                return user.socketId === socketId;
+               const idSearch = user.socketId.find(function(id,index){
+                    if(id===socketId){
+                        user.socketId.splice(index,1);
+                        return true
+                    };
+                });
+               return idSearch !== undefined;
             }
         });
         if (searchUser === -1) {
             if (action === 'connection') {
-                arr.push({ nick: sessionName, socketId: socketId });
+                arr.push({ nick: sessionName, socketId: [socketId] });
             }
         } else {
             if (action === 'connection') {
-                arr[searchUser] = { nick: sessionName, socketId: socketId };
+                arr[searchUser].socketId.push(socketId);
             }else if(action === 'disconnect'){
+                if(arr[searchUser].socketId.length===0){
                 arr.splice(searchUser,1);
+            }
             }
         }
     }else{
         if(action==='connection'){
-            arr.push({ nick: sessionName, socketId: socketId });
+            arr.push({ nick: sessionName, socketId: [socketId] });
         }
     }
     io.sockets.emit('updateOnline',arr);
