@@ -35,7 +35,6 @@ app.use(session);
 app.set('view engine', 'ejs');
 app.use('/public', express.static(__dirname + '/assets'));
 app.use('/img', express.static(__dirname + '/images'));
-console.log('this should be after server');
 app.use('/', routes);
 
 // socket setup

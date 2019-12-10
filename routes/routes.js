@@ -18,7 +18,7 @@ const redirectChat = (req, res, next) => {
     }
 }
 router.get('/', redirectChat, function (req, res) {
-    res.render('index', { page: 'home' });  //SUTVARKYTI SITA
+    res.render('index', { page: 'home' });  
 });
 router.get('/chat', redirectLogin, function (req, res) {
     res.render('pagesEJS/chat', { page: 'chat' });
